@@ -1,0 +1,422 @@
+<html lang="es"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script>var sustant=1;</script>
+
+
+<meta charset="UTF-8">
+<title>El Ahorcado</title>
+<meta name="description" content="Juego basado en el tradicional juego del ahorcado, en el que se tiene que adivinar una palabra. Con múltiples opciones de configuración.">
+<!-- Google tag (gtag.js) -->
+     <script async="" src="ahorcado_files/google-analytics_analytics.js"></script>
+     <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-7CM03T05FR');
+     </script><meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="ahorcado_files/educa.css" rel="stylesheet">
+<link href="ahorcado_files/ahorcado.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="https://www.edudiver.com/imagenes/favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://www.edudiver.com/imagenes/favicon-64.png" sizes="64x64">
+<link rel="icon" type="image/png" href="https://www.edudiver.com/imagenes/favicon-128.png" sizes="128x128">
+</head>
+<body>
+<div class="contenido">
+  <h1>El ahorcado</h1>
+  <div id="palabr">
+    <p id="clase">sustantivo</p>
+    <p id="tema">relaciones</p>
+    <p id="palabra_secreta">___TODO___</p>
+ <!--   <p id="clase">sustantivo</p>
+    <p id="tema">relaciones</p>
+    <p id="palabra_secreta">___</p> -->
+  </div>
+  <div id="teclado">
+    <button type="button" id="A" class="tecl" onclick="funtec('A')">A</button>
+    <button type="button" id="B" class="tecl" onclick="funtec('B')">B</button>
+    <button type="button" id="C" class="tecl" onclick="funtec('C')">C</button>
+    <button type="button" id="D" class="tecl" onclick="funtec('D')">D</button>
+    <button type="button" id="E" class="tecl" onclick="funtec('E')">E</button>
+    <button type="button" id="F" class="tecl" onclick="funtec('F')">F</button>
+    <button type="button" id="G" class="tecl" onclick="funtec('G')">G</button>
+    <button type="button" id="H" class="tecl" onclick="funtec('H')">H</button>
+    <button type="button" id="I" class="tecl" onclick="funtec('I')">I</button>
+    <button type="button" id="J" class="tecl" onclick="funtec('J')">J</button>
+    <button type="button" id="K" class="tecl" onclick="funtec('K')">K</button>
+    <button type="button" id="L" class="tecl" onclick="funtec('L')">L</button>
+    <button type="button" id="M" class="tecl" onclick="funtec('M')">M</button>
+    <button type="button" id="N" class="tecl" onclick="funtec('N')">N</button>
+    <button type="button" id="nt" class="tecl" onclick="funt()">Ñ</button>
+    <button type="button" id="O" class="tecl" onclick="funtec('O')">O</button>
+    <button type="button" id="P" class="tecl" onclick="funtec('P')">P</button>
+    <button type="button" id="Q" class="tecl" onclick="funtec('Q')">Q</button>
+    <button type="button" id="R" class="tecl" onclick="funtec('R')">R</button>
+    <button type="button" id="S" class="tecl" onclick="funtec('S')">S</button>
+    <button type="button" id="T" class="tecl" onclick="funtec('T')">T</button>
+    <button type="button" id="U" class="tecl" onclick="funtec('U')">U</button>
+    <button type="button" id="V" class="tecl" onclick="funtec('V')">V</button>
+    <button type="button" id="W" class="tecl" onclick="funtec('W')">W</button>
+    <button type="button" id="X" class="tecl" onclick="funtec('X')">X</button>
+    <button type="button" id="Y" class="tecl" onclick="funtec('Y')">Y</button>
+    <button type="button" id="Z" class="tecl" onclick="funtec('Z')">Z</button>
+  </div>
+  <div id="fondibujo"></div>
+  <div id="dibujo">
+    <img id="img10" src="ahorcado_files/ahorcado-0.png">
+    <img id="img9" src="ahorcado_files/ahorcado-1.png">
+    <img id="img8" src="ahorcado_files/ahorcado-2.png">
+    <img id="img7" src="ahorcado_files/ahorcado-3.png">
+    <img id="img6" src="ahorcado_files/ahorcado-4.png">
+    <img id="img5" src="ahorcado_files/ahorcado-5.png">
+    <img id="img4" src="ahorcado_files/ahorcado-6.png">
+    <img id="img3" src="ahorcado_files/ahorcado-7.png">
+    <img id="img2" src="ahorcado_files/ahorcado-8.png">
+    <img id="img1" src="ahorcado_files/ahorcado-9.png">
+    <img id="img0" src="ahorcado_files/ahorcado-10.png">
+  </div>
+  <div class="otros">
+    <div class="result">
+      <p>Palabras acertadas: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="pa">000</span></p>
+      <p>Palabras <strong>no</strong> acertadas: &nbsp;&nbsp;&nbsp; <span id="pna">111</span></p>
+    </div>
+    <div class="result">
+      <p><button type="button" class="btnam" onclick="document.getElementById('conf').style.display = 'block'">Ajustes</button></p>
+      <p><button type="button" class="btnam" onclick="document.getElementById('comj').style.display = 'block'">¿Cómo jugar?</button></p>
+    </div>
+  </div>
+</div>
+<div class="pmarcador"><p class="pinfo">Fallos permitidos:</p></div>
+<div class="marcador"><div id="info">10</div></div>
+<div class="ads">
+</div>
+<a class="ed" href="http://www.edudiver.com/" target="_blank"><img class="edudiv" src="ahorcado_files/edudiver193.png" alt="Edudiver.com"></a>
+<div class="pie-ck">
+  <a id="p-ck" href="http://www.edudiver.com/varios/politica-de-cookies.php" target="_blank">Cookies</a>
+</div>
+<audio id="bien">
+  <source src="ahorcado_files/ok.mp3" type="audio/mpeg">
+  <source src="ahorcado_files/ok.wav" type="audio/wav">
+</audio>
+<audio id="mal">
+  <source src="ahorcado_files/tono.mp3" type="audio/mpeg">
+  <source src="ahorcado_files/tono.wav" type="audio/wav">
+</audio>
+<audio id="complet">
+  <source src="ahorcado_files/triunfo.mp3" type="audio/mpeg">
+  <source src="ahorcado_files/triunfo.wav" type="audio/wav">
+</audio>
+<audio id="nocomplet">
+  <source src="ahorcado_files/fallo.mp3" type="audio/mpeg">
+  <source src="ahorcado_files/fallo.wav" type="audio/wav">
+</audio> 
+<div id="alerta">
+  <div class="msjm">
+    <p>La palabra era:</p>
+<p id="palabram">TÍA</p>    <button class="btnalert" onclick="document.location='fallo.php'">Volver a jugar</button>
+  </div>  
+</div>
+<div id="alerta2">
+  <div class="msjb">
+    <p class="felicita">¡Enhorabuena!, Has acertado.</p>
+    <p>La palabra es:</p>
+<p id="palabrab">TÍA</p>    <button class="btnalert" onclick="document.location='acierto.php'">Volver a jugar</button>
+  </div>  
+</div>
+<script>var sustant=1;</script><div id="conf">
+  <div class="mconf">
+    <form action="ajustes.php" method="get">
+      <h2>Ajustes</h2>
+        <input type="checkbox" name="clase" value="clase" checked="checked"><label for="clase"> Mostrar clase de palabra</label><br>
+        <input type="checkbox" name="tema" value="tema" checked="checked"><label for="tema"> Mostrar temática</label><br>
+        <input type="checkbox" name="sonido" value="sonido" checked="checked"><label for="sonido"> Activar sonido</label><br>
+      <h3>Longitud máxima de las palabras</h3>
+        <div class="scolum">
+          <input type="radio" id="5l" name="long" value="5l"><label for="5l"> 5 letras</label><br>
+          <input type="radio" id="7l" name="long" value="7l"><label for="7l"> 7 letras </label><br>
+          <input type="radio" id="10l" name="long" value="10l"><label for="10l"> 10 letras</label><br>
+          <div class="colum">
+            <input type="radio" id="14l" name="long" value="14l"><label for="14l"> 14 letras</label><br>
+            <input type="radio" id="sl" name="long" value="sl" checked="checked"><label for="sl"> Sin límite</label><br>
+          </div>
+        </div>
+      <h3>Fallos permitidos</h3>
+        <input type="radio" id="fp10" name="fp" value="10" checked="checked"><label for="10"> 10 </label>&nbsp;&nbsp;&nbsp;
+        <input type="radio" id="fp8" name="fp" value="8"><label for="8"> 8 </label>&nbsp;&nbsp;&nbsp;
+        <input type="radio" id="fp6" name="fp" value="6"><label for="6"> 6 </label><br>  
+      <h3>Clases de palabras</h3>
+        <input type="checkbox" name="adjetivos" value="Adjetivos" checked="checked"><label for="adjetivos"> Adjetivos</label><br>
+        <input type="checkbox" name="adverbios" value="Adverbios" checked="checked"><label for="adverbios"> Adverbios</label><br>
+        <input type="checkbox" name="conjunciones" value="Conjunciones" checked="checked"><label for="conjunciones"> Conjunciones</label><br>
+        <input type="checkbox" name="preposiciones" value="Preposiciones" checked="checked"><label for="preposiciones"> Preposiciones</label><br>
+        <input type="checkbox" name="pronombres" value="Pronombres" checked="checked"><label for="pronombres"> Pronombres</label><br>
+        <input type="checkbox" name="sustantivos" onclick="cambios()" value="Sustantivos" checked="checked"><label for="sustantivos"> Sustantivos</label><br>
+        <input type="checkbox" name="verbos" value="Verbos" checked="checked"><label for="verbos"> Verbos</label><br>
+      <div id="tematic">
+      <h3>Temática (Sustantivos)</h3>
+        <input type="checkbox" name="abstractos" value="Abstractos" checked="checked"><label for="abstractos"> Abstractos</label><br>
+        <input type="checkbox" name="alimentos" value="Alimentos y bebidas" checked="checked"><label for="alimentos"> Alimentos y bebidas</label><br>
+        <input type="checkbox" name="animales" value="Animales" checked="checked"><label for="animales"> Animales</label><br>
+        <input type="checkbox" name="america" value="America" checked="checked"><label for="america"> Capitales de América</label><br>
+        <input type="checkbox" name="europa" value="Europa" checked="checked"><label for="europa"> Capitales de Europa</label><br>
+        <input type="checkbox" name="ciudades" value="Ciudades" checked="checked"><label for="ciudades"> Ciudades de España</label><br>
+        <input type="checkbox" name="comunicaciones" value="Comunicaciones" checked="checked"><label for="comunicaciones"> Comunicaciones</label><br>
+        <input type="checkbox" name="cuerpo" value="Cuerpo humano" checked="checked"><label for="cuerpo"> Cuerpo humano</label><br>
+        <input type="checkbox" name="deportes" value="Deportes" checked="checked"><label for="deportes"> Deportes</label><br>
+<!--    <input type="checkbox" name="gente" value="Gente" ><label for="gente"> Gente</label><br>       -->
+        <input type="checkbox" name="lugares" value="Lugares" checked="checked"><label for="lugares"> Lugares</label><br>
+        <input type="checkbox" name="mares" value="Mares y oceanos" checked="checked"><label for="mares"> Mares y océanos</label><br>
+        <input type="checkbox" name="matematicas" value="Matematicas" checked="checked"><label for="matematicas"> Matemáticas</label><br>
+        <input type="checkbox" name="materiales" value="Materiales" checked="checked"><label for="materiales"> Materiales</label><br>
+        <input type="checkbox" name="nombres" value="Nombres de persona" checked="checked"><label for="nombres"> Nombres de persona</label><br>
+        <input type="checkbox" name="objetos" value="Objetos" checked="checked"><label for="objetos"> Objetos</label><br>
+        <input type="checkbox" name="paises" value="Paises" checked="checked"><label for="paises"> Países</label><br>
+        <input type="checkbox" name="profesiones" value="Profesiones" checked="checked"><label for="profesiones"> Profesiones</label><br>
+        <input type="checkbox" name="relaciones" value="Relaciones" checked="checked"><label for="relaciones"> Relaciones</label><br>
+        <input type="checkbox" name="sociedad" value="Sociedad" checked="checked"><label for="sociedad"> Sociedad</label><br>
+        <input type="checkbox" name="tiempo" value="Tiempo" checked="checked"><label for="tiempo"> Tiempo</label><br>
+        <input type="checkbox" name="transportes" value="Transportes" checked="checked"><label for="transportes"> Transportes</label><br>
+        <input type="checkbox" name="vegetales" value="Vegetales" checked="checked"><label for="vegetales"> Vegetales</label><br>
+      </div>     
+      <input class="inpal" type="submit" value="Guardar cambios">
+      <button class="btnal" onclick="document.getElementById('comj').style.display = 'none'">Cancelar</button>
+    </form> 
+  </div>   
+</div>
+<script>
+  var pizarra="______";
+  var palabra="TIA";
+  var pfallos="10";
+  var palab;
+  var comprueba="0";
+function funt(){
+  if(palabra.includes("\u00D1")){      
+    document.getElementById("nt").className = "ntecl";
+    document.getElementById("bien").play();    if(!pizarra.includes("_")){
+      document.getElementById("alerta2").style.display = "block";
+      document.getElementById("complet").play();    }
+    funtec('\u00D1');
+
+  } else {
+    document.getElementById("nt").className = "ntec";
+    if(!comprueba.includes("nt")){
+      comprueba = comprueba + "nt";     
+      document.getElementById("nt").className = "ntec";
+      pfallos--;
+      document.getElementById("mal").play();      document.getElementById("info").innerHTML = pfallos;
+      switch (pfallos) {
+        case 9:
+          document.getElementById("img9").style.display = "block"; 
+          break;
+        case 8:
+          document.getElementById("img8").style.display = "block";
+          break;
+        case 7:
+          document.getElementById("img7").style.display = "block";
+          break;
+        case 6:
+          document.getElementById("img6").style.display = "block";
+          break;
+        case 5:
+          document.getElementById("img5").style.display = "block";
+          break;
+        case 4:
+          document.getElementById("img4").style.display = "block";
+          break;
+        case 3:
+          document.getElementById("img3").style.display = "block";
+          break;
+        case 2:
+          document.getElementById("img2").style.display = "block";
+          break;
+        case 1:
+          document.getElementById("img1").style.display = "block";
+          break;
+        default:
+          document.getElementById("img0").style.display = "block";
+          document.getElementById("alerta").style.display = "block";
+          document.getElementById("nocomplet").play();      }    
+    }
+  }       
+}  
+function funtec(optec){
+    if(palabra.includes(optec)){
+      var n = palabra.search(optec);
+      if (n > 0){
+        var pizarr = pizarra.substr(0, n);
+      } else {var pizarr = "";}
+      var n1= n + 1;
+      var izarra = pizarra.substr(n1);
+      pizarra=pizarr + optec + izarra;
+      document.getElementById("palabra_secreta").innerHTML = pizarra;
+      var res1 = palabra.substr(n1);
+      var nn = res1.search(optec);
+      if(nn > -1){
+        nn2=nn + n1;
+        nn3=nn2 + 1;
+        var nn1= nn + 1;
+        letraok(nn2,nn3);
+        var res2 = res1.substr(nn1);
+        var nnn = res2.search(optec);
+        if(nnn > -1){
+          nnn2=nnn + nn2 + 1;
+          var nnn1= nnn + 1;
+          nnn3=nnn2 + 1;
+          letraok(nnn2,nnn3);
+          var res3 = res2.substr(nnn1);
+          var nnnn = res3.search(optec);
+          if(nnnn > -1){
+            nnnn2=nnnn + nnn2 + 1;
+            var nnnn1= nnnn + 1;
+            nnnn3=nnnn2 + 1;
+            letraok(nnnn2,nnnn3);
+            var res4 = res3.substr(nnnn1);
+            var nnnnn = res4.search(optec);
+            if(nnnnn > -1){
+              nnnnn2=nnnnn + nnnn2 + 1;
+              var nnnnn1= nnnnn + 1;
+              nnnnn3=nnnnn2 + 1;
+              letraok(nnnnn2,nnnnn3);
+              var res5 = res4.substr(nnnnn1);
+              var nnnnnn = res5.search(optec);
+              if(nnnnnn > -1){
+                nnnnnn2=nnnnnn + nnnnn2 + 1;
+                var nnnnnn1= nnnnnn + 1;
+                nnnnnn3=nnnnnn2 + 1;
+                letraok(nnnnnn2,nnnnnn3);
+                var res6 = res5.substr(nnnnnn1);
+                var nnnnnnn = res6.search(optec);
+                if(nnnnnnn > -1){
+                  nnnnnnn2=nnnnnnn + nnnnnn2 + 1;
+                  nnnnnnn3=nnnnnnn2 + 1;
+                  var nnnnnnn1= nnnnnnn + 1;
+                  letraok(nnnnnnn2,nnnnnnn3);
+                }
+              }
+            }
+          }
+        }
+      }
+      function letraok(m2,m3){
+        pizarr = pizarra.substr(0, m2);
+        izarra = pizarra.substr(m3);
+        pizarra=pizarr + optec + izarra;
+        document.getElementById("palabra_secreta").innerHTML = pizarra;
+      }
+      document.getElementById(optec).className = "ntecl";
+      document.getElementById("bien").play();    if(!pizarra.includes("_")){
+        document.getElementById("alerta2").style.display = "block";
+        document.getElementById("complet").play();    }
+    } else {
+      if(!comprueba.includes(optec)){
+        comprueba = comprueba + optec;
+        document.getElementById("mal").play();
+        document.getElementById(optec).className = "ntec";
+        pfallos--;
+        document.getElementById("info").innerHTML = pfallos;
+        switch (pfallos) {
+          case 9:
+            document.getElementById("img9").style.display = "block";
+            break;
+          case 8:
+            document.getElementById("img8").style.display = "block";
+            break;
+          case 7:
+            document.getElementById("img7").style.display = "block";
+            break;
+          case 6:
+            document.getElementById("img6").style.display = "block";
+            break;
+          case 5:
+            document.getElementById("img5").style.display = "block";
+            break;
+          case 4:
+            document.getElementById("img4").style.display = "block";
+            break;
+          case 3:
+            document.getElementById("img3").style.display = "block";
+            break;
+          case 2:
+            document.getElementById("img2").style.display = "block";
+            break;
+          case 1:
+            document.getElementById("img1").style.display = "block";
+            break;
+          default:
+            document.getElementById("img0").style.display = "block";
+            document.getElementById("alerta").style.display = "block";
+            document.getElementById("nocomplet").play();      }
+      }
+    }
+}
+</script>
+<script>
+if (sustant == 0){
+  document.getElementById("tematic").style.display = "none";
+}
+function cambios(){
+  if (sustant == 0){
+    document.getElementById("tematic").style.display = "block";
+    sustant=1;
+  } else {
+    document.getElementById("tematic").style.display = "none";
+    sustant=0;
+  }
+}
+</script>
+<div id="comj">
+  <div class="mcomj">
+    <h2>¿Como jugar?</h2>
+    <p>A este juego pueden jugar personas de todas las edades.</p>
+    <p>El objetivo del juego es adivinar la palabra oculta.</p>
+    <p>En el bloque central tendremos la palabra oculta representada por
+ unos guiones (un guión por cada letra de la palabra). Justo debajo, 
+todas las letras del alfabeto.</p>
+    <p>Al pulsar o hacer clic en una letra, si la palabra contiene esta 
+letra, se sustituirá el guión o guiones correspondientes por la letra en
+ cuestión.
+       De lo contrario se añadirá una porción del dibujo del ahorcado y 
+se restará uno al número de fallos permitidos.</p>
+    <p>Para ganar tenemos que completar la palabra antes de que se 
+complete el dibujo (por defecto 10 errores como máximo, aunque se puede 
+configurar en los ajustes).</p>
+    <p>Junto a la palabra oculta, en el mismo bloque pero en la esquina 
+superior izquierda, tenemos una pista que nos informa de la clase de 
+palabra (adjetivo, adverbio, conjunción, 
+       preposición, pronombre, sustantivo o verbo). Si se trata de un 
+sustantivo, en la esquina superior derecha tenemos otra pista sobre la 
+temática a la que pertenece. 
+       Estas pistas se pueden activar o desactivar en el apartado 
+"Ajustes".</p>
+    <p>Debajo del teclado, tenemos dos contadores que nos irán mostrando las palabras que hemos acertado y las que no hemos acertado.
+       Este contador se reinicia cuando cerramos el navegador o apagamos el equipo.</p>
+    <h3>Ajustes</h3>
+    <p>Pulsando en el botón Ajustes, accedemos a un menú con el que 
+podemos configurar el juego para adaptarlo a la dificultad que queramos,
+ según la edad o
+       características de los jugadores, además de seleccionar un tema o
+ una clase de palabras. Los ajustes se mantendrán durante toda la sesión
+ y se
+       borrarán cuando cerremos el navegador:</p>
+    <ul>
+      <li>En el primer bloque podemos activar o desactivar el sonido, 
+así como elegir si queremos que se muestre la temática (en los 
+sustantivos) y la clase de palabra.
+          La opción predeterminada es: todo activado.</li>
+      <li><strong>Longitud máxima de las palabras:</strong> Podemos ajustar el número máximo de letras que pueden tener las palabras.
+          Esto es útil especialmente en el caso de niños pequeños, para hacer que el juego sea más fácil.
+          La opción predeterminada es: Sin límite.</li>
+      <li><strong>Fallos permitidos:</strong> Podemos ajustar el número máximo de fallos o letras no acertadas, que podemos cometer en cada palabra.
+          Opción predeterminada: 10.</li>
+      <li><strong>Clases de palabras:</strong> podemos activar o desactivar las clases de palabras posibles. La opción predeterminada es: todo activado.</li>
+      <li><strong>Temática:</strong> Si la palabra es un sustantivo, podremos activar o desactivar cada temática. La opción predeterminada es: todo activado.</li>
+    </ul>
+    <p>Una vez configuradas todas nuestras preferencias, pulsamos o hacemos clic en el botón  <strong>"Guardar cambios"</strong> para que estos cambios se hagan efectivos.</p>
+    <button type="button" class="btnay" onclick="document.getElementById('comj').style.display = 'none'">Cerrar</button>
+  </div>        
+</div>
+<script>
+if (window.top != window.self) {
+  window.location.href = "https://www.edudiver.com/juegos/ahorcado.php";
+}
+</script>
+
+</body></html>
