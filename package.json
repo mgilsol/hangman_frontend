@@ -1,5 +1,5 @@
 {
-  "name": "${PROJECT_NAME}",
+  "name": "hangman_frontend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
